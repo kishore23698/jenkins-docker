@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: camunda
+  name: camunda
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: camunda
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: camunda
+    spec:
+      containers:
+      - image: kishore23698/my-app-3.0
+        name: camunda-bpm-platform
+        ports:
+        - containerPort: 8080
+        resources: {}
+status: {}
